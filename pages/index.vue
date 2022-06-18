@@ -1,9 +1,11 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <h1>Damian's D3 Practice</h1>
-    </v-col>
-  </v-row>
+  <v-container fluid class="d-flex flex-column justify-start">
+    <v-row align="center">
+      <v-col>
+        <h1 style="text-align: left" class="mr-auto">⬆ Pick an option</h1>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
