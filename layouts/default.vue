@@ -73,13 +73,18 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: 'Home',
           to: '/',
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
+          icon: 'mdi-shape',
+          title: 'Shapes',
+          to: '/shapes',
+        },
+        {
+          icon: 'mdi-chart-bar-stacked',
+          title: 'Bar Graphs',
+          to: '/bargraphs',
         },
       ],
       miniVariant: false,
