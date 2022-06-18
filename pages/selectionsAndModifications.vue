@@ -65,6 +65,6 @@ export default {
   }
 
   .v-application .blue {
-    background-color: black !important;
+    background-color: transparent !important;
   }
 </style>

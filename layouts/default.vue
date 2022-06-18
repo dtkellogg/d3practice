@@ -68,12 +68,17 @@ export default {
         {
           icon: 'mdi-format-color-text',
           title: 'Selections and Modifications',
-          to: '/selections-and-modifications',
+          to: '/selectionsAndModifications',
         },
         {
           icon: 'mdi-shape',
           title: 'Shapes',
           to: '/shapes',
+        },
+        {
+          icon: 'mdi-database',
+          title: 'Data',
+          to: '/data',
         },
         {
           icon: 'mdi-chart-bar-stacked',
