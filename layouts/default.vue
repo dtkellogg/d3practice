@@ -90,6 +90,16 @@ export default {
           title: 'Bar Graphs',
           to: '/bargraphs',
         },
+        {
+          icon: 'mdi-chart-bar',
+          title: 'Bar Graph with Dynamic Data',
+          to: '/bargraphdynamicdata',
+        },
+        {
+          icon: 'mdi-chart-bar',
+          title: 'Bar Graph Axes',
+          to: '/bargraphaxes',
+        },
       ],
       miniVariant: false,
       right: true,

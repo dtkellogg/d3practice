@@ -3,7 +3,7 @@
     <h1>Bar Graphs</h1>
   <div id="viz" />
   <div id="viz2" class="mt-7" />
-  <div id="viz3" class="mt-7" />
+  <div id="viz3" class="mt-7 d-flex flex-column" />
   </v-container>
 </template>
 
@@ -43,6 +43,8 @@ export default {
         .attr('y', (d) => {
           return this.height - d
         })
+
+
 
     //
     // bar chart with x and y scaled. Y uses a linear scale and X uses an ordinal scale
@@ -136,6 +138,97 @@ export default {
         .attr('y', (d) => {
           return this.height - yScale2(d)
         })
+
+
+    //
+    // Events - on hover
+    let tempColor = ''
+    d3
+      .select('#viz3')
+        .append('svg')
+        .attr('width', this.width)
+        .attr('height', this.height)
+        .style('background', 'grey')
+
+      .selectAll('rect')
+        .data(this.barData)
+        .enter().append('rect')
+        .style('fill', (d, i) => {
+          return colors2(i)  // Make color inputs the indicies
+        })
+        .attr('width', (d) => {
+          return xScale2.bandwidth()
+        })
+        .attr('height', function (d) {
+          return yScale2(d)
+        })
+        .attr('x', (d) => {
+          return xScale2(d)
+        })
+        .attr('y', (d) => {
+          return this.height - yScale2(d)
+        })
+        .on('mouseover', function (d, i) {
+          tempColor = this.style.fill
+          d3.select(this)
+            .style('fill', '#FFFF00')
+        })
+        .on('mouseout', function (d, i) {
+          d3.select(this)
+            .style('fill', tempColor)
+        })
+
+
+
+    //
+    // Animations with Transitions
+    const myChart = d3
+      .select('#viz3')
+        .append('svg')
+        .attr('width', this.width)
+        .attr('height', this.height)
+        .style('background', 'grey')
+
+      .selectAll('rect')
+        .data(this.barData)
+        .enter().append('rect')
+        .style('fill', (d, i) => {
+          return colors2(i)  // Make color inputs the indicies
+        })
+        .attr('width', (d) => {
+          return xScale2.bandwidth()
+        })
+        .attr('height', 0)
+        .attr('y', this.height)
+        
+        .attr('x', (d) => {
+          return xScale2(d)
+        })
+        
+        .on('mouseover', function (d, i) {
+          tempColor = this.style.fill
+          d3.select(this)
+            .style('fill', '#FFFF00')
+        })
+        .on('mouseout', function (d, i) {
+          d3.select(this)
+            .style('fill', tempColor)
+        })
+
+
+      myChart.transition()
+        .attr('height', function (d) {
+          return yScale2(d)
+        })
+        .attr('y', (d) => {
+          return this.height - yScale2(d)
+        })
+        .delay((d,i) => {
+          return i * 20
+        })
+        .duration(1000)
+        .ease(d3.easeBounceOut)
+
 
   }
 }
