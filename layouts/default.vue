@@ -72,8 +72,13 @@ export default {
         },
         {
           icon: 'mdi-shape',
-          title: 'Shapes',
-          to: '/shapes',
+          title: 'SVG Shapes',
+          to: '/SVGShapes',
+        },
+        {
+          icon: 'mdi-shape',
+          title: 'SVG with D3',
+          to: '/SVGWithD3',
         },
         {
           icon: 'mdi-database',

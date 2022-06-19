@@ -1,6 +1,6 @@
 <template>
   <v-container fluid class="fill-height d-flex flex-column" style="background: grey">
-    <h1 class="mb-3">Shape Examples</h1>
+    <h1 class="mb-3">SVG Shapes</h1>
 
     <svg height="400" width="500" style="background: red">
       <line x1="0" y1="0" x2="470" y2="200" style="stroke: #268db2; stroke-width: 40px" />
